@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Link to bootstrap cdn -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <!-- Link to fontawesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+    integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- Linkt to Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Link to CSS file -->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/theme-init.js"></script>
+
+  <title>Emerald Escapes</title>
+
+</head>
+
+<body>
+  <!-- Main section starting with overflow background -->
+  <main class="hero-section position-relative overflow-hidden text-white d-flex flex-column">
+
+    <!-- Header and navbar with bootrstrap classes for responsiveness and layout -->
+    <header class="position-relative">
+      <nav class="navbar navbar-expand-lg hero-nav py-3 bg-grey" data-bs-theme="dark" aria-label="Main navigation">
+        <div class="container-fluid p-0 gap-2">
+          <a class="navbar-brand d-flex align-items-center gap-2 gap-md-3 m-0" href="index.html">
+            <img class="brand__mark" src="images/logo.png" alt="" width="48" height="48">
+            <span class="brand-name fw-bold">Emerald <em class="fw-normal">Escapes</em></span>
+          </a>
+
+          <!-- Favourite and Theme buttons -->
+          <div class="d-flex align-items-center gap-2 ms-auto order-lg-3">
+            <a class="nav-control fav-pill btn rounded-pill d-flex align-items-center gap-2 px-3"
+              href="experiences.html" aria-label="View experiences and favourites">
+              <i class="fa-solid fa-heart text-danger" aria-hidden="true"></i>
+              <span class="fav-count">0</span>
+            </a>
+            <button class="nav-control theme-toggle btn rounded-circle" type="button" aria-label="Switch colour theme">
+              <i class="fa-solid fa-sun" aria-hidden="true"></i>
+            </button>
+
+            <!-- Collapsable menu for mobile -->
+            <button class="nav-control navbar-toggler rounded-circle p-0" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+
+          <div class="collapse navbar-collapse order-lg-2" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto text-center gap-lg-3 pt-3 pt-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="experiences.html">Experiences</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact &amp; Booking</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero section content -->
+    <section class="hero-content mt-auto" aria-labelledby="hero-heading">
+      <p class="hero-eyebrow d-flex align-items-center gap-3 fw-semibold mb-4">
+        <span aria-hidden="true">●</span>
+        Irish-owned travel studio · Galway, est. 2026
+      </p>
+
+      <h1 class="hero-title mb-4" id="hero-heading">
+        <span class="d-block">Explore More.</span>
+        <span class="d-block">Discover <em>Ireland.</em></span>
+      </h1>
+
+      <div class="row align-items-end gy-4">
+        <div class="col-lg-5">
+          <p class="hero-description mb-0">
+            Hand-crafted holidays, short breaks and once-in-a-lifetime
+            experiences across all 32 counties — from Atlantic cliff
+            walks to candle-lit trad sessions.
+          </p>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="hero-actions d-flex justify-content-lg-end gap-2 gap-md-3">
+            <a class="btn btn-warning rounded-pill fw-semibold" href="experiences.html">
+              Browse experiences
+              <i class="fa-solid fa-arrow-right ms-2" aria-hidden="true"></i>
+            </a>
+
+            <a class="btn btn-outline-light rounded-pill fw-semibold" href="contact.html">
+              Plan my trip
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="hero-bottom d-flex align-items-center justify-content-between">
+      <span class="d-none d-lg-block">53.2707° N, 9.0568° W</span>
+
+      <div class="scroll-indicator d-flex align-items-center gap-3 mx-auto">
+        <span>Scroll</span>
+        <span class="scroll-line" aria-hidden="true"></span>
+      </div>
+
+      <span class="d-none d-lg-block">17 curated experiences</span>
+    </div>
+  </main>
+
+  <!-- Our Story section -->
+  <section class="story-section" aria-labelledby="story-heading">
+    <div class="container-fluid p-0">
+      <div class="row g-5 align-items-start">
+
+        <!-- Story text -->
+        <div class="col-lg-7">
+          <p class="story-eyebrow fw-semibold mb-4">Our story</p>
+
+          <h2 class="story-heading mb-4" id="story-heading">
+            We're a small team of Galway locals who think Ireland
+            is best seen <em>slowly.</em>
+          </h2>
+
+          <div class="story-copy">
+            <p>
+              Emerald Escapes began in 2026 when two friends — a tour
+              guide from Connemara and a chef from Cork — started taking
+              visiting friends to the places guidebooks forget: the pub
+              with the Tuesday-night session, the cove only the fishermen
+              use, the cottage with the best view of the Twelve Bens.
+            </p>
+
+            <p>
+              Today we design small-group and self-guided trips for
+              travellers who want more than a checklist. Every experience
+              is tested by our team, supports local businesses and comes
+              with a real person on the other end of the phone.
+            </p>
+          </div>
+
+          <ol class="story-audiences list-unstyled mt-5 mb-0">
+            <li class="d-flex gap-4 py-3">
+              <span class="story-number" aria-hidden="true">01</span>
+              <div>
+                <h3 class="mb-1">Couples &amp; friends</h3>
+                <p class="mb-0">
+                  City breaks and cosy cottages for long weekends away.
+                </p>
+              </div>
+            </li>
+
+            <li class="d-flex gap-4 py-3">
+              <span class="story-number" aria-hidden="true">02</span>
+              <div>
+                <h3 class="mb-1">Families</h3>
+                <p class="mb-0">
+                  Stress-free adventures with kid-approved activities.
+                </p>
+              </div>
+            </li>
+
+            <li class="d-flex gap-4 py-3">
+              <span class="story-number" aria-hidden="true">03</span>
+              <div>
+                <h3 class="mb-1">Culture seekers &amp; overseas visitors</h3>
+                <p class="mb-0">
+                  Heritage, food and music trips with local storytellers.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <!-- Story badge and photo -->
+        <div class="col-lg-5">
+          <figure class="story-figure mb-0">
+            <div class="position-relative">
+              <img class="story-image w-100 d-block" src="images/story.jpg"
+                alt="White stone cottage surrounded by green mountains in Connemara" loading="lazy">
+
+              <svg class="story-badge" viewBox="0 0 120 120" role="img" aria-label="Loved by locals. Established 2026">
+                <circle cx="60" cy="60" r="60" fill="#e4b65b"></circle>
+
+                <defs>
+                  <path id="story-badge-ring" d="M60,60 m-43,0 a43,43 0 1,1 86,0 a43,43 0 1,1 -86,0"></path>
+                </defs>
+
+                <text fill="#071a13" font-size="12" font-weight="700" letter-spacing="1">
+                  <textPath href="#story-badge-ring" textLength="270" lengthAdjust="spacing">
+                    LOVED BY LOCALS · EST. 2026 · &nbsp;
+                  </textPath>
+                </text>
+
+                <text x="60" y="70" text-anchor="middle" font-size="32" fill="#071a13">★</text>
+              </svg>
+            </div>
+
+            <figcaption class="small fst-italic mt-3">
+              Where it started — Maam Valley, Connemara.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Experiences section -->
+  <section class="experiences-section" aria-labelledby="experiences-heading">
+    <div class="container-fluid p-0">
+
+      <div class="row align-items-end gy-3 mb-5">
+        <div class="col-lg-8">
+          <p class="experiences-eyebrow fw-semibold mb-3">What we offer</p>
+          <h2 class="experiences-heading mb-0" id="experiences-heading">
+            Five ways to <em>escape.</em>
+          </h2>
+        </div>
+
+        <div class="col-lg-4">
+          <p class="experiences-intro mb-0">
+            Pick a mood and we'll handle the rest — stays, guides,
+            transport and the little local secrets in between.
+          </p>
+        </div>
+      </div>
+
+      <div class="row g-3">
+        <!-- Large coastal card -->
+        <div class="col-lg-8">
+          <a class="experience-card experience-card-large" href="experiences.html">
+            <img src="images/moher.jpg" alt="" loading="lazy">
+
+            <span class="experience-arrow" aria-hidden="true">↗</span>
+
+            <div class="experience-caption">
+              <p class="experience-count mb-2">04 experiences</p>
+              <h3>Coastal Adventures</h3>
+              <p class="mb-0">Sea cliffs, kayaks and the Wild Atlantic Way.</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Two stacked cards -->
+        <div class="col-lg-4">
+          <div class="d-flex flex-column gap-3">
+            <a class="experience-card" href="experiences.html">
+              <img src="images/dublin.jpg" alt="" loading="lazy">
+
+              <span class="experience-arrow" aria-hidden="true">↗</span>
+
+              <div class="experience-caption">
+                <p class="experience-count mb-2">03 experiences</p>
+                <h3>City Breaks</h3>
+                <p class="mb-0">Dublin, Galway &amp; Belfast after dark.</p>
+              </div>
+            </a>
+
+            <a class="experience-card" href="experiences.html">
+              <img src="images/connemara.jpg" alt="" loading="lazy">
+
+              <span class="experience-arrow" aria-hidden="true">↗</span>
+
+              <div class="experience-caption">
+                <p class="experience-count mb-2">03 experiences</p>
+                <h3>Countryside Escapes</h3>
+                <p class="mb-0">Quiet cottages and mountain trails.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Bottom row -->
+        <div class="col-lg-6">
+          <a class="experience-card" href="experiences.html">
+            <img src="images/loughkey.jpg" alt="" loading="lazy">
+
+            <span class="experience-arrow" aria-hidden="true">↗</span>
+
+            <div class="experience-caption">
+              <p class="experience-count mb-2">03 experiences</p>
+              <h3>Family Trips</h3>
+              <p class="mb-0">Wildlife, caves and treetop trails.</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-lg-6">
+          <a class="experience-card" href="experiences.html">
+            <img src="images/newgrange.jpg" alt="" loading="lazy">
+
+            <span class="experience-arrow" aria-hidden="true">↗</span>
+
+            <div class="experience-caption">
+              <p class="experience-count mb-2">04 experiences</p>
+              <h3>Cultural Experiences</h3>
+              <p class="mb-0">
+                Castles, trad music and 5,000 years of history.
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive carousel -->
+  <section class="featured-section py-5" aria-labelledby="featured-heading">
+    <div class="container py-4">
+      <div class="d-flex flex-wrap justify-content-between align-items-end gap-4 mb-5">
+        <div>
+          <p class="experience-count mb-3">Featured this season</p>
+
+          <h2 class="experiences-heading mb-0" id="featured-heading">
+            Our most-loved <em class="text-warning">escapes.</em>
+          </h2>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+          <div class="progress featured-progress" role="progressbar" aria-label="Carousel position" aria-valuenow="0"
+            aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-warning" id="featured-progress"></div>
+          </div>
+
+          <button class="btn btn-outline-light rounded-circle" id="featured-prev" type="button"
+            aria-label="Previous experiences" aria-controls="featured-track">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+          </button>
+
+          <button class="btn btn-outline-light rounded-circle" id="featured-next" type="button"
+            aria-label="Next experiences" aria-controls="featured-track">
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="featured-track d-flex gap-3 overflow-x-auto px-3 pb-3" id="featured-track" role="region"
+      aria-label="Featured experiences" tabindex="0">
+
+      <a class="experience-card featured-card flex-shrink-0" href="experiences.html">
+        <img src="images/dublin.jpg" alt="" loading="lazy">
+        <span class="position-absolute top-0 start-0 m-3 small">01 / 06</span>
+        <span class="badge rounded-pill text-bg-warning position-absolute top-0 end-0 m-3">
+          from €289
+        </span>
+        <div class="experience-caption">
+          <p class="experience-count mb-2">City · 2 nights</p>
+          <h3>Dublin &amp; Literary Escapes</h3>
+          <p class="mb-0">Dublin city centre</p>
+        </div>
+      </a>
+
+      <a class="experience-card featured-card flex-shrink-0" href="experiences.html">
+        <img src="images/moher.jpg" alt="" loading="lazy">
+        <span class="position-absolute top-0 start-0 m-3 small">02 / 06</span>
+        <span class="badge rounded-pill text-bg-warning position-absolute top-0 end-0 m-3">
+          from €79
+        </span>
+        <div class="experience-caption">
+          <p class="experience-count mb-2">Coastal · 1 day</p>
+          <h3>Cliffs of Moher Coastal Walk</h3>
+          <p class="mb-0">Doolin, Co. Clare</p>
+        </div>
+      </a>
+
+      <a class="experience-card featured-card flex-shrink-0" href="experiences.html">
+        <img src="images/wildatlantic.jpg" alt="" loading="lazy">
+        <span class="position-absolute top-0 start-0 m-3 small">03 / 06</span>
+        <span class="badge rounded-pill text-bg-warning position-absolute top-0 end-0 m-3">
+          from €1,190
+        </span>
+        <div class="experience-caption">
+          <p class="experience-count mb-2">Coastal · 7 days</p>
+          <h3>Wild Atlantic Way Road Trip</h3>
+          <p class="mb-0">Donegal to Kerry</p>
+        </div>
+      </a>
+
+      <a class="experience-card featured-card flex-shrink-0" href="experiences.html">
+        <img src="images/causeway.jpg" alt="" loading="lazy">
+        <span class="position-absolute top-0 start-0 m-3 small">04 / 06</span>
+        <span class="badge rounded-pill text-bg-warning position-absolute top-0 end-0 m-3">
+          from €259
+        </span>
+        <div class="experience-caption">
+          <p class="experience-count mb-2">Coastal · 2 days</p>
+          <h3>Giant's Causeway &amp; Coast</h3>
+          <p class="mb-0">Causeway Coast, Co. Antrim</p>
+        </div>
+      </a>
+
+      <a class="experience-card featured-card flex-shrink-0" href="experiences.html">
+        <img src="images/connemara.jpg" alt="" loading="lazy">
+        <span class="position-absolute top-0 start-0 m-3 small">05 / 06</span>
+        <span class="badge rounded-pill text-bg-warning position-absolute top-0 end-0 m-3">
+          from €549
+        </span>
+        <div class="experience-caption">
+          <p class="experience-count mb-2">Countryside · 4 nights</p>
+          <h3>Connemara Cottage Escape</h3>
+          <p class="mb-0">Connemara, Co. Galway</p>
+        </div>
+      </a>
+
+      <a class="experience-card featured-card flex-shrink-0" href="experiences.html">
+        <img src="images/aran.jpg" alt="" loading="lazy">
+        <span class="position-absolute top-0 start-0 m-3 small">06 / 06</span>
+        <span class="badge rounded-pill text-bg-warning position-absolute top-0 end-0 m-3">
+          from €299
+        </span>
+        <div class="experience-caption">
+          <p class="experience-count mb-2">Cultural · 2 days</p>
+          <h3>Aran Islands Trad &amp; Cycling</h3>
+          <p class="mb-0">Inis Mór, Co. Galway</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Stats counter section -->
+  <section class="stats-section py-5" aria-labelledby="stats-heading">
+    <div class="container py-5">
+      <h2 class="visually-hidden" id="stats-heading">
+        Emerald Escapes at a glance
+      </h2>
+
+      <div class="row row-cols-2 row-cols-lg-4 gy-5">
+
+        <div class="col">
+          <div class="border-start border-light border-opacity-10 ps-3 ps-md-4">
+            <p class="stats-number mb-2">
+              <span class="stats-counter" data-target="17">17</span>
+            </p>
+            <p class="stats-label mb-0">curated experiences</p>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="border-start border-light border-opacity-10 ps-3 ps-md-4">
+            <p class="stats-number mb-2">
+              <span class="stats-counter" data-target="5">5</span>
+            </p>
+            <p class="stats-label mb-0">ways to escape</p>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="border-start border-light border-opacity-10 ps-3 ps-md-4">
+            <p class="stats-number mb-2">
+              <span class="stats-counter" data-target="32">32</span>
+            </p>
+            <p class="stats-label mb-0">counties to discover</p>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="border-start border-light border-opacity-10 ps-3 ps-md-4">
+            <p class="stats-number mb-2">
+              <span class="stats-counter" data-target="6">6</span>
+            </p>
+            <p class="stats-label mb-0">featured escapes</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- Final call to action -->
+  <section class="final-cta py-5" aria-labelledby="cta-heading">
+    <div class="container py-5">
+      <div class="row align-items-end gy-4">
+        <div class="col-lg-7">
+          <h2 class="cta-heading mb-0" id="cta-heading">
+            Your Ireland<br>
+            is <em>waiting.</em>
+          </h2>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="d-flex flex-column flex-sm-row justify-content-lg-end gap-3">
+            <a class="cta-btn btn btn-warning rounded-pill px-4 py-3 fw-semibold" href="experiences.html">
+              View all experiences
+            </a>
+
+            <a class="cta-btn btn btn-outline-light rounded-pill px-4 py-3 fw-semibold" href="contact.html">
+              Send an enquiry
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row gy-4 pb-5">
+
+        <div class="col-lg-6">
+          <a class="footer-brand d-inline-flex align-items-center gap-2
+          text-decoration-none mb-3" href="index.html">
+            <img src="images/logo.png" alt="" width="40" height="40">
+            <span>Emerald <em>Escapes</em></span>
+          </a>
+
+          <p class="mb-0">
+            Holidays, short breaks and unique travel<br class="d-none d-md-inline">
+            experiences across Ireland.
+          </p>
+        </div>
+
+        <div class="col-6 col-lg-3">
+          <h2 class="footer-heading mb-3">Explore</h2>
+
+          <nav aria-label="Footer navigation">
+            <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="experiences.html">Experiences</a></li>
+              <li><a href="contact.html">Contact &amp; Booking</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="col-6 col-lg-3">
+          <h2 class="footer-heading mb-3">Visit us</h2>
+
+          <!-- Sample contact details for this fictional company -->
+          <address class="fst-normal mb-0">
+            14 Quay Street<br>
+            Galway, Ireland<br>
+            <a href="tel:+35391555014">+353 91 555 014</a><br>
+            <a class="text-break" href="mailto:hello@emeraldescapes.ie">
+              hello@emeraldescapes.ie
+            </a>
+          </address>
+        </div>
+
+      </div>
+
+      <div class="border-top border-light border-opacity-10 pt-4
+      d-flex flex-column flex-lg-row justify-content-between gap-2 small">
+        <p class="mb-0">
+          © 2026 Emerald Escapes. A fictional company developed by <strong><a href="https://github.com/Cesargarciajr" target="_blank">Cesar Garcia</a></strong> for educational purpose
+        </p>
+
+        <p class="mb-0">
+          Higher Diploma in AI/ML · Web Design &amp; Client-Side Scripting CA at National College of Ireland
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!-- Bootstrap cdn script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/featured-carousel.js"></script>
+  <script src="js/stats-counter.js"></script>
+</body>
+
+</html>

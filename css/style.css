@@ -1,0 +1,586 @@
+/* Shared values */
+:root {
+  --font-body: "DM Sans", sans-serif;
+  --font-heading: "Cormorant Garamond", serif;
+
+  --color-text: #f5f2e8;
+  --color-muted: #a8b8b0;
+  --color-gold: #e4b65b;
+  --color-gold-hover: #f0c673;
+  --color-green: #55bd95;
+
+  --background-dark: #071a13;
+  --background-featured: #102d23;
+
+  --section-gutter: 5%;
+  --section-spacing: clamp(4rem, 8vw, 8rem);
+}
+
+body {
+  background: #30312f;
+  font-family: var(--font-body);
+}
+
+/* Shared typography */
+.brand-name,
+.hero-title,
+.story-heading,
+.story-audiences h3,
+.story-number,
+.experiences-heading,
+.experience-caption h3,
+.stats-number,
+.cta-heading,
+.footer-brand {
+  font-family: var(--font-heading);
+}
+
+.hero-title,
+.story-heading,
+.story-audiences h3,
+.story-number,
+.experiences-heading,
+.experience-caption h3,
+.stats-number,
+.cta-heading {
+  font-weight: 400;
+}
+
+.story-heading,
+.experiences-heading {
+  font-size: clamp(2.5rem, 4.5vw, 4.5rem);
+  letter-spacing: -0.045em;
+}
+
+.hero-eyebrow,
+.story-eyebrow,
+.experiences-eyebrow,
+.experience-count,
+.hero-bottom,
+.footer-heading {
+  text-transform: uppercase;
+}
+
+.hero-eyebrow,
+.experiences-eyebrow,
+.experience-count,
+.footer-heading {
+  letter-spacing: 0.18em;
+}
+
+.story-eyebrow,
+.hero-bottom {
+  letter-spacing: 0.2em;
+}
+
+.hero-eyebrow > span,
+.hero-title em,
+.story-number,
+.experience-count,
+.cta-heading em,
+.footer-heading {
+  color: var(--color-gold);
+}
+
+.story-heading em,
+.experiences-eyebrow,
+.experiences-heading em {
+  color: var(--color-green);
+}
+
+.story-copy,
+.story-audiences p,
+.story-figure figcaption,
+.experiences-intro {
+  color: var(--color-muted);
+  line-height: 1.7;
+}
+
+/* Shared section layout */
+.hero-nav,
+.hero-content,
+.hero-bottom {
+  padding-inline: var(--section-gutter);
+}
+
+.story-section,
+.experiences-section {
+  padding: var(--section-spacing) var(--section-gutter);
+}
+
+.story-section,
+.experiences-section,
+.featured-section,
+.stats-section,
+.final-cta {
+  color: var(--color-text);
+}
+
+.story-section,
+.stats-section {
+  background: var(--background-dark);
+}
+
+/* Shared gold buttons */
+.hero-actions .btn-warning,
+.final-cta .btn-warning {
+  --bs-btn-bg: var(--color-gold);
+  --bs-btn-border-color: var(--color-gold);
+  --bs-btn-color: #082319;
+}
+
+.final-cta .btn-warning {
+  --bs-btn-hover-bg: var(--color-gold-hover);
+  --bs-btn-hover-border-color: var(--color-gold-hover);
+  --bs-btn-hover-color: #082319;
+}
+
+/* Hero and navigation */
+.hero-section {
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, rgb(0 0 0 / 25%), rgb(0 20 13 / 75%)),
+    url("../images/hero.jpg") center / cover;
+}
+
+.brand-name {
+  font-size: clamp(1.1rem, 3.5vw, 1.7rem);
+}
+
+.nav-control {
+  min-width: 44px;
+  height: 44px;
+  color: var(--color-text);
+  border: 1px solid rgb(255 255 255 / 40%);
+}
+
+.nav-control:hover,
+.nav-control:focus-visible {
+  color: #fff;
+  background: rgb(255 255 255 / 15%);
+}
+
+.hero-content {
+  padding-top: 25svh;
+}
+
+.hero-eyebrow {
+  font-size: 0.75rem;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 12vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+}
+
+.hero-description {
+  font-size: 1rem;
+  color: #e2e0d7;
+  line-height: 1.7;
+}
+
+.hero-actions .btn {
+  padding: 1rem;
+  font-size: clamp(0.75rem, 2.8vw, 1rem);
+  white-space: nowrap;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-actions .btn-warning {
+  flex: 1.5;
+}
+
+.hero-actions .btn-outline-light {
+  flex: 1;
+  --bs-btn-border-color: rgb(255 255 255 / 45%);
+}
+
+.hero-actions
+.cta-btn .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgb(0 0 0 / 20%);
+}
+
+.hero-bottom {
+  position: relative;
+  padding-block: 2rem;
+  font-size: 0.7rem;
+  color: rgb(255 255 255 / 70%);
+}
+
+.scroll-line {
+  height: 40px;
+  border-left: 1px solid rgb(255 255 255 / 40%);
+}
+
+/* Our story */
+.story-eyebrow {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+.story-heading {
+  line-height: 1.05;
+}
+
+.story-copy p + p {
+  margin-top: 1.5rem;
+}
+
+.story-audiences li {
+  border-top: 1px solid rgb(255 255 255 / 12%);
+  transition: transform 0.2s ease;
+}
+
+.story-audiences li:last-child {
+  border-bottom: 1px solid rgb(255 255 255 / 12%);
+}
+
+.story-audiences li:hover {
+  transform: translateX(6px);
+}
+
+.story-audiences h3 {
+  font-size: 1.5rem;
+}
+
+.story-number {
+  min-width: 2rem;
+  font-size: 1.75rem;
+  font-style: italic;
+  line-height: 1;
+}
+
+.story-image {
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 50% 50% 4px 4px / 38% 38% 4px 4px;
+}
+
+.story-badge {
+  position: absolute;
+  width: clamp(90px, 10vw, 140px);
+  left: -6%;
+  bottom: 4%;
+  transform-origin: center;
+  animation: badge-spin 20s linear infinite;
+}
+
+/* Experiences */
+.experiences-section {
+  background: #11291f;
+}
+
+.experiences-eyebrow,
+.experience-count {
+  font-size: 0.7rem;
+}
+
+.experiences-heading {
+  line-height: 1;
+}
+
+.experience-count {
+  font-weight: 600;
+}
+
+.experience-card {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 13.5rem;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 1rem;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.experience-card img,
+.experience-card::before {
+  position: absolute;
+  inset: 0;
+}
+
+.experience-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  transition: transform 0.4s ease;
+}
+
+.experience-card::before {
+  content: "";
+  z-index: -1;
+  background: linear-gradient(
+    to bottom,
+    rgb(0 0 0 / 5%),
+    rgb(0 15 9 / 90%)
+  );
+}
+
+.experience-caption {
+  padding: 1.5rem;
+}
+
+.experience-caption h3 {
+  font-size: clamp(1.75rem, 2.5vw, 2.5rem);
+  line-height: 1;
+}
+
+.experience-caption > p:last-child {
+  font-size: 0.85rem;
+  color: #d0d8d2;
+}
+
+.experience-arrow {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 20%);
+}
+
+.experience-card:hover img {
+  transform: scale(1.05);
+}
+
+.experience-card:focus-visible {
+  outline: 3px solid var(--color-gold);
+  outline-offset: 4px;
+}
+
+/* Featured carousel */
+.featured-section {
+  background: var(--background-featured);
+}
+
+.featured-track {
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 1rem;
+  scrollbar-width: none;
+}
+
+.featured-track::-webkit-scrollbar {
+  display: none;
+}
+
+.featured-card {
+  width: clamp(16rem, 18vw, 24rem);
+  min-height: 26rem;
+  scroll-snap-align: start;
+}
+
+.featured-card h3 {
+  font-size: 1.75rem;
+}
+
+.featured-progress {
+  width: 100px;
+  height: 2px;
+  background: rgb(255 255 255 / 20%);
+}
+
+#featured-progress {
+  width: 0%;
+}
+
+/* Statistics */
+.stats-number {
+  font-size: clamp(4rem, 7vw, 7rem);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.stats-label {
+  color: var(--color-muted);
+}
+
+/* Final call to action */
+.final-cta {
+  background:
+    radial-gradient(
+      ellipse at 80% 85%,
+      rgb(228 182 91 / 20%),
+      transparent 60%
+    ),
+    var(--background-featured);
+}
+
+.cta-heading {
+  font-size: clamp(3.5rem, 7vw, 7rem);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+
+.final-cta .btn-outline-light {
+  --bs-btn-border-color: rgb(255 255 255 / 40%);
+}
+
+/* Footer */
+.site-footer {
+  background: #06120d;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.footer-brand {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.footer-heading {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.site-footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-footer .footer-brand {
+  color: var(--color-text);
+}
+
+.site-footer a:hover {
+  color: var(--color-gold);
+}
+
+/* Animation */
+@keyframes badge-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+  :root {
+    --section-gutter: 7%;
+  }
+
+  .hero-content {
+    padding-top: clamp(6rem, 15svh, 10rem);
+  }
+
+  .hero-title {
+    font-size: clamp(5rem, 10vw, 10.5rem);
+  }
+
+  .hero-actions .btn {
+    flex: initial;
+    padding: 1rem 2rem;
+  }
+
+  .hero-actions .btn-warning {
+    --bs-btn-hover-bg: var(--color-gold-hover);
+    --bs-btn-hover-border-color: var(--color-gold-hover);
+    --bs-btn-hover-color: #082319;
+  }
+
+  .hero-actions .btn-outline-light {
+    --bs-btn-hover-bg: #f5f2e837;
+    --bs-btn-hover-border-color: var(--color-text);
+    --bs-btn-hover-color: white;
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .navbar .nav-link.active::after {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 5px;
+    margin: 4px auto 0;
+    border-radius: 50%;
+    background: var(--color-gold);
+  }
+
+  .experience-card-large {
+    min-height: 28rem;
+    height: 100%;
+  }
+
+  .experience-card-large h3 {
+    font-size: clamp(2.5rem, 3.5vw, 4rem);
+  }
+}
+
+/* Mobile and tablet */
+@media (max-width: 991.98px) {
+  .story-figure {
+    max-width: 480px;
+    margin-inline: auto;
+  }
+
+  .experience-card {
+    min-height: 18rem;
+  }
+}
+
+/* Small phones */
+@media (max-width: 575.98px) {
+  .brand__mark {
+    width: 32px;
+    height: 32px;
+  }
+
+  .nav-control {
+    min-width: 36px;
+    height: 36px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .story-badge {
+    animation: none;
+  }
+
+  .hero-actions .btn,
+  .story-audiences li,
+  .experience-card img {
+    transition: none;
+  }
+
+  .hero-actions .btn:hover,
+  .story-audiences li:hover,
+  .experience-card:hover img {
+    transform: none;
+  }
+}
+
+.final-cta .btn {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.final-cta .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgb(0 0 0 / 20%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .final-cta .btn {
+    transition: none;
+  }
+
+  .final-cta .btn:hover {
+    transform: none;
+  }
+}
