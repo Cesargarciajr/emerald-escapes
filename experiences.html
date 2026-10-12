@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Experiences | Emerald Escapes</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" rel="stylesheet"
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="experiences-page">
+
+    <!-- Fixed navbar -->
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg hero-nav py-3" data-bs-theme="dark" aria-label="Main navigation">
+
+            <div class="container-fluid p-0 gap-2">
+                <a class="navbar-brand d-flex align-items-center gap-2 gap-md-3 m-0" href="index.html">
+                    <img class="brand__mark" src="images/logo.png" alt="" width="48" height="48">
+                    <span class="brand-name fw-bold">
+                        Emerald <em class="fw-normal">Escapes</em>
+                    </span>
+                </a>
+
+                <div class="d-flex align-items-center gap-2 ms-auto order-lg-3">
+                    <a class="nav-control fav-pill btn rounded-pill
+            d-flex align-items-center gap-2 px-3" href="#experience-filters" id="navbar-saved"
+                        aria-label="Show saved experiences">
+                        <i class="fa-solid fa-heart text-danger" aria-hidden="true"></i>
+                        <span class="fav-count">0</span>
+                    </a>
+
+                    <button class="nav-control theme-toggle btn rounded-circle" type="button"
+                        aria-label="Switch colour theme">
+                        <i class="fa-solid fa-sun" aria-hidden="true"></i>
+                    </button>
+
+                    <button class="nav-control navbar-toggler rounded-circle p-0" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse order-lg-2" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto text-center gap-lg-3 pt-3 pt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="experiences.html">
+                                Experiences
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">
+                                Contact &amp; Booking
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Introduction -->
+        <section class="experiences-introduction" aria-labelledby="experiences-page-heading">
+            <div class="container-fluid p-0">
+                <div class="row align-items-end gy-4">
+
+                    <div class="col-lg-7">
+                        <p class="experiences-eyebrow fw-semibold mb-4">
+                            Experiences · 17 curated trips
+                        </p>
+
+                        <h1 class="experiences-page-title mb-0" id="experiences-page-heading">
+                            Seventeen ways<br class="d-none d-md-inline">
+                            to fall for <em>Ireland.</em>
+                        </h1>
+                    </div>
+
+                    <div class="col-lg-5">
+                        <p class="experiences-intro fs-5 mb-0">
+                            Find your next escape by mood or budget,
+                            save your favourite trips, and explore the details.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Sticky filters -->
+        <section class="experience-filters border-top border-bottom
+      border-light border-opacity-10 py-3" aria-labelledby="filters-heading" data-bs-theme="dark">
+
+            <h2 class="visually-hidden" id="filters-heading">
+                Filter experiences
+            </h2>
+
+            <form id="experience-filters">
+                <div class="row align-items-center g-3">
+
+                    <div class="col-xl-6">
+                        <fieldset class="mb-0">
+                            <legend class="visually-hidden">Travel category</legend>
+
+                            <div class="category-options d-flex gap-1
+                rounded-pill p-1 overflow-x-auto">
+
+                                <input class="btn-check" type="radio" name="category" id="category-all" value="all"
+                                    checked>
+                                <label class="category-button btn rounded-pill px-3" for="category-all">All</label>
+
+                                <input class="btn-check" type="radio" name="category" id="category-city" value="city">
+                                <label class="category-button btn rounded-pill px-3" for="category-city">City</label>
+
+                                <input class="btn-check" type="radio" name="category" id="category-coastal"
+                                    value="coastal">
+                                <label class="category-button btn rounded-pill px-3"
+                                    for="category-coastal">Coastal</label>
+
+                                <input class="btn-check" type="radio" name="category" id="category-countryside"
+                                    value="countryside">
+                                <label class="category-button btn rounded-pill px-3"
+                                    for="category-countryside">Countryside</label>
+
+                                <input class="btn-check" type="radio" name="category" id="category-family"
+                                    value="family">
+                                <label class="category-button btn rounded-pill px-3"
+                                    for="category-family">Family</label>
+
+                                <input class="btn-check" type="radio" name="category" id="category-cultural"
+                                    value="cultural">
+                                <label class="category-button btn rounded-pill px-3"
+                                    for="category-cultural">Cultural</label>
+
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="col-xl-6">
+                        <div class="d-flex flex-wrap justify-content-xl-end gap-2">
+
+                            <div class="filter-select">
+                                <label class="visually-hidden" for="price-filter">
+                                    Maximum price per person
+                                </label>
+                                <select class="form-select rounded-pill py-3" id="price-filter" name="maximumPrice">
+                                    <option value="all">Any price</option>
+                                    <option value="100">Up to €100</option>
+                                    <option value="300">Up to €300</option>
+                                    <option value="600">Up to €600</option>
+                                </select>
+                            </div>
+
+                            <div class="filter-select">
+                                <label class="visually-hidden" for="sort-filter">
+                                    Sort experiences
+                                </label>
+                                <select class="form-select rounded-pill py-3" id="sort-filter" name="sort">
+                                    <option value="recommended">Recommended</option>
+                                    <option value="price-low">Price: low to high</option>
+                                    <option value="price-high">Price: high to low</option>
+                                    <option value="name">Name: A–Z</option>
+                                </select>
+                            </div>
+
+                            <input class="btn-check" type="checkbox" id="saved-filter" name="savedOnly">
+                            <label class="filter-button btn btn-outline-light
+                rounded-pill px-3 py-3" for="saved-filter">
+                                <i class="fa-solid fa-heart text-danger me-1" aria-hidden="true"></i>
+                                Saved
+                            </label>
+
+                            <button class="filter-button btn btn-outline-light
+                rounded-pill px-3 py-3" id="compare-experiences" type="button" disabled>
+                                Compare (<span id="compare-count">0</span>)
+                            </button>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center gap-3 mt-3">
+                    <p class="experiences-intro small mb-0" id="experience-results" role="status">
+                        Loading experiences…
+                    </p>
+
+                    <button class="reset-filters btn btn-link p-0 fw-semibold" type="reset">
+                        Reset filters
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Cards -->
+        <section class="experiences-results" aria-labelledby="results-heading">
+            <h2 class="visually-hidden" id="results-heading">
+                Available experiences
+            </h2>
+
+            <p class="experiences-intro small mb-4">
+                Sample trips and prices for this fictional coursework website.
+            </p>
+
+            <div class="row g-4" id="experiences-grid"></div>
+
+            <div class="text-center py-5 d-none" id="experiences-empty">
+                <i class="fa-regular fa-heart fs-1 text-warning mb-3" aria-hidden="true"></i>
+
+                <p class="experiences-intro fs-5 mb-4" id="empty-message"></p>
+
+                <button class="btn btn-light rounded-pill px-4 py-3 fw-semibold" id="browse-all-experiences"
+                    type="button">
+                    Browse all experiences
+                </button>
+            </div>
+
+            <noscript>
+                <p>Please enable JavaScript to browse the experiences.</p>
+            </noscript>
+        </section>
+    </main>
+
+    <!-- Details modal -->
+    <div class="modal fade" id="experience-modal" tabindex="-1" aria-labelledby="trip-title" aria-hidden="true"
+        data-bs-theme="dark">
+
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content trip-modal-content rounded-5 overflow-hidden">
+                <div class="modal-body p-0">
+                    <div class="row g-0">
+
+                        <div class="col-lg-5">
+                            <img class="trip-modal-image w-100 object-fit-cover" id="trip-image" alt="">
+                        </div>
+
+                        <div class="col-lg-7 p-4 p-lg-5">
+                            <div class="d-flex justify-content-between align-items-center gap-3 mb-4">
+                                <p class="experience-count mb-0" id="trip-category"></p>
+                                <button class="btn-close" type="button" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+
+                            <h2 class="trip-modal-title mb-2" id="trip-title"></h2>
+                            <p class="trip-location mb-4" id="trip-location"></p>
+                            <p class="experiences-intro mb-4" id="trip-description"></p>
+
+                            <dl class="row g-3 border border-light border-opacity-10
+                rounded-4 p-3 mb-4">
+                                <div class="col-6 col-sm-4">
+                                    <dt class="small fw-normal mb-1">Duration</dt>
+                                    <dd class="fw-semibold mb-0" id="trip-duration"></dd>
+                                </div>
+                                <div class="col-6 col-sm-4">
+                                    <dt class="small fw-normal mb-1">Best time</dt>
+                                    <dd class="fw-semibold mb-0" id="trip-season"></dd>
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    <dt class="small fw-normal mb-1">From</dt>
+                                    <dd class="fw-semibold mb-0" id="trip-price"></dd>
+                                </div>
+                            </dl>
+
+                            <h3 class="fs-6 text-uppercase mb-3">What's included</h3>
+                            <ul class="list-unstyled d-flex flex-column gap-2 mb-4" id="trip-included"></ul>
+
+                            <div class="trip-estimate rounded-4 p-3 mb-4">
+                                <div class="row align-items-center g-3">
+                                    <div class="col-sm-6">
+                                        <label class="form-label fw-semibold" for="trip-travellers">
+                                            Travellers
+                                        </label>
+                                        <input class="form-control" id="trip-travellers" type="number" min="1" max="20"
+                                            step="1" value="2">
+                                    </div>
+
+                                    <div class="col-sm-6 text-sm-end">
+                                        <p class="small mb-1">Estimated total</p>
+                                        <output class="trip-price fs-2" id="trip-total" for="trip-travellers"
+                                            aria-live="polite"></output>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex flex-column flex-sm-row flex-wrap gap-3">
+                                <a class="btn btn-light rounded-pill px-4 py-3 fw-semibold" href="contact.html"
+                                    id="trip-enquire">
+                                    Enquire about this trip →
+                                </a>
+
+                                <button class="btn btn-outline-light rounded-pill px-4 py-3" id="trip-save"
+                                    type="button" aria-pressed="false">
+                                    Save to favourites
+                                </button>
+                            </div>
+
+                            <p class="experiences-intro small mt-3 mb-0">
+                                Estimate based on the sample price per person.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comparison modal -->
+    <div class="modal fade" id="compare-modal" tabindex="-1" aria-labelledby="compare-title" aria-hidden="true"
+        data-bs-theme="dark">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content trip-modal-content rounded-4">
+
+                <div class="modal-header">
+                    <h2 class="modal-title fs-4" id="compare-title">
+                        Compare your escapes
+                    </h2>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table class="table align-middle">
+                            <caption class="visually-hidden">
+                                Selected trips and sample prices per person
+                            </caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Experience</th>
+                                    <th scope="col">Duration</th>
+                                    <th scope="col">From / person</th>
+                                </tr>
+                            </thead>
+                            <tbody id="compare-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer pt-5 pb-4">
+        <div class="container">
+            <div class="row gy-4 pb-5">
+
+                <div class="col-lg-6">
+                    <a class="footer-brand d-inline-flex align-items-center
+            gap-2 text-decoration-none mb-3" href="index.html">
+                        <img src="images/logo.png" alt="" width="40" height="40">
+                        <span>Emerald <em>Escapes</em></span>
+                    </a>
+                    <p class="mb-0">
+                        Holidays, short breaks and unique travel<br class="d-none d-md-inline">
+                        experiences across Ireland.
+                    </p>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                    <h2 class="footer-heading mb-3">Explore</h2>
+                    <nav aria-label="Footer navigation">
+                        <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                            <li><a href="index.html">Home</a></li>
+                            <li>
+                                <a href="experiences.html" aria-current="page">Experiences</a>
+                            </li>
+                            <li><a href="contact.html">Contact &amp; Booking</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                    <h2 class="footer-heading mb-3">Visit us</h2>
+                    <address class="fst-normal mb-0">
+                        14 Quay Street<br>
+                        Galway, Ireland<br>
+                        <a href="tel:+35391555014">+353 91 555 014</a><br>
+                        <a class="text-break" href="mailto:hello@emeraldescapes.ie">
+                            hello@emeraldescapes.ie
+                        </a>
+                    </address>
+                </div>
+
+            </div>
+
+            <div class="border-top border-light border-opacity-10 pt-4
+        d-flex flex-column flex-lg-row justify-content-between gap-3 small">
+                <p class="mb-0">
+                    © 2026 Emerald Escapes. A fictional company developed by
+                    <a href="https://github.com/Cesargarciajr" target="_blank" rel="noopener noreferrer">
+                        Cesar Garcia
+                    </a>
+                    for educational purposes.
+                </p>
+                <p class="mb-0">
+                    Higher Diploma in AI/ML · Web Design &amp; Client-Side Scripting CA
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="back-to-top" type="button" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/experiences.js"></script>
+    <script src="js/scroll-navigation.js"></script>
+</body>
+
+</html>

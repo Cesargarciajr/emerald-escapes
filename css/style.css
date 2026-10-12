@@ -835,3 +835,182 @@ body {
 #booking-success-heading {
   scroll-margin-top: 110px;
 }
+
+/* Experiences page */
+.experiences-page {
+  padding-top: 88px;
+  background: var(--background-dark);
+  color: var(--color-text);
+}
+
+.experiences-introduction {
+  padding: var(--section-spacing) var(--section-gutter);
+}
+
+.experiences-page-title {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 7vw, 7rem);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.experiences-page-title em {
+  color: var(--color-green);
+}
+
+.experience-filters {
+  padding-inline: var(--section-gutter);
+}
+
+.category-options {
+  width: fit-content;
+  max-width: 100%;
+  background: #10291f;
+}
+
+.category-button {
+  flex-shrink: 0;
+  --bs-btn-color: var(--color-muted);
+  --bs-btn-hover-color: var(--color-text);
+  --bs-btn-hover-bg: rgb(255 255 255 / 8%);
+  --bs-btn-active-color: var(--background-dark);
+  --bs-btn-active-bg: var(--color-text);
+  --bs-btn-active-border-color: transparent;
+}
+
+.filter-select {
+  flex: 1 1 150px;
+  max-width: 210px;
+}
+
+.experience-filters .form-select {
+  background-color: #10221b;
+  color: var(--color-text);
+  border-color: rgb(255 255 255 / 20%);
+}
+
+.filter-button {
+  white-space: nowrap;
+  --bs-btn-color: var(--color-text);
+  --bs-btn-border-color: rgb(255 255 255 / 20%);
+}
+
+.reset-filters {
+  --bs-btn-color: var(--color-green);
+  --bs-btn-hover-color: var(--color-text);
+}
+
+.experiences-results {
+  padding: 2rem var(--section-gutter) var(--section-spacing);
+}
+
+.experiences-page {
+  padding-top: var(--navbar-height, 88px);
+}
+
+.experience-filters {
+  position: sticky;
+  top: var(--navbar-height, 88px);
+  z-index: 1020;
+  background: var(--background-dark);
+}
+
+#experience-filters {
+  scroll-margin-top: var(--navbar-height, 88px);
+}
+
+.trip-card,
+.trip-modal-content {
+  background: #10221b;
+  color: var(--color-text);
+}
+
+.trip-card-image {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.trip-card-title,
+.trip-modal-title,
+.trip-price {
+  font-family: var(--font-heading);
+  font-weight: 400;
+}
+
+.trip-card-title {
+  font-size: 1.8rem;
+  line-height: 1.1;
+}
+
+.trip-modal-title {
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  line-height: 1;
+}
+
+.trip-location {
+  color: var(--color-green);
+}
+
+.trip-save-button {
+  width: 44px;
+  height: 44px;
+}
+
+.trip-modal-image {
+  height: 240px;
+}
+
+.trip-estimate {
+  background: #173126;
+}
+
+@media (min-width: 992px) {
+  .trip-modal-image {
+    height: 100%;
+    min-height: 600px;
+  }
+}
+
+#booking-content {
+  scroll-margin-top: 110px;
+}
+
+.trip-card-image {
+  transition: transform 0.4s ease;
+}
+
+.trip-quick-view {
+  background: var(--color-text);
+  color: var(--background-dark);
+  font-size: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .trip-card:hover .trip-card-image {
+    transform: scale(1.04);
+  }
+
+  .trip-card:hover .trip-quick-view {
+    opacity: 1;
+  }
+}
+
+/* Show the hint when navigating with the keyboard too. */
+.trip-card:focus-within .trip-quick-view {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trip-card-image,
+  .trip-quick-view {
+    transition: none;
+  }
+
+  .trip-card:hover .trip-card-image {
+    transform: none;
+  }
+}

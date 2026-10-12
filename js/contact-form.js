@@ -168,6 +168,32 @@
     fullName.focus();
   });
 
+  // Run once when the contact page loads.
+  const parameters = new URLSearchParams(window.location.search);
+  const selectedTrip = parameters.get("trip");
+
+  if (selectedTrip && !message.value.trim()) {
+    const title = selectedTrip.trim().slice(0, 200);
+    const location = (parameters.get("location") || "").trim().slice(0, 200);
+    const requestedTravellers = Number(parameters.get("travellers"));
+
+    const travellerCount =
+      Number.isInteger(requestedTravellers) &&
+        requestedTravellers >= 1 &&
+        requestedTravellers <= 20
+        ? requestedTravellers
+        : 2;
+
+    queryType.value = "booking";
+
+    message.value =
+      `Hi, I'd like to book "${title}"` +
+      (location ? ` (${location})` : "") +
+      ` for ${travellerCount} traveller${travellerCount === 1 ? "" : "s"}. ` +
+      "My preferred dates are: ";
+  }
+
   count.textContent = message.value.length;
   submit.disabled = false;
+
 })();
