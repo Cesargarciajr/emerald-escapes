@@ -584,3 +584,254 @@ body {
     transform: none;
   }
 }
+
+/* ===================================
+   Fixed Navigation Bar
+=================================== */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1030;
+}
+
+.site-header .hero-nav {
+  background: rgb(7 26 19 / 92%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgb(255 255 255 / 10%);
+}
+
+
+/* ===================================
+   Back to Top Button
+=================================== */
+
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1020;
+
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--color-gold);
+  color: var(--background-dark);
+
+  border: none;
+  border-radius: 50%;
+
+  font-size: 1.2rem;
+  cursor: pointer;
+
+  /* Hidden by default */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(15px);
+
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s ease,
+    background 0.3s ease;
+
+  box-shadow: 0 4px 15px rgb(0 0 0 / 25%);
+}
+
+/* Show the button when scrolling */
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Hover effect */
+.back-to-top:hover {
+  background: var(--color-gold-hover);
+  transform: translateY(-4px);
+}
+
+/* Keyboard accessibility */
+.back-to-top:focus-visible {
+  outline: 3px solid var(--color-text);
+  outline-offset: 4px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 575.98px) {
+  .back-to-top {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/* Accessibility: reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top {
+    transition: none;
+  }
+}
+
+/* Back to Top - Mobile */
+@media (max-width: 767.98px) {
+  .back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 20px;
+
+    width: 45px;
+    height: 45px;
+
+    z-index: 9999;
+  }
+
+  .back-to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+}
+
+.back-to-top {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+  z-index: 9999 !important;
+  transform: none !important;
+}
+
+/*
+  Contact & Booking page style
+*/
+
+.contact-page {
+  background: var(--background-dark);
+  color: var(--color-text);
+}
+
+/* Keep this page's header in the normal document flow. */
+
+.contact-main {
+  padding: var(--section-spacing) var(--section-gutter);
+}
+
+.contact-eyebrow,
+.contact-detail-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.contact-eyebrow,
+.contact-title em {
+  color: var(--color-green);
+}
+
+.contact-title,
+.contact-panel-title {
+  font-family: var(--font-heading);
+  font-weight: 400;
+}
+
+.contact-title {
+  font-size: clamp(3.25rem, 7vw, 7rem);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.contact-panel-title {
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.1;
+}
+
+.contact-muted {
+  color: var(--color-muted);
+  line-height: 1.7;
+}
+
+.contact-details {
+  background: #102d23;
+}
+
+.contact-detail-label {
+  color: var(--color-gold);
+}
+
+.contact-details a {
+  color: inherit;
+  text-underline-offset: 0.3em;
+}
+
+.contact-details a:hover {
+  color: var(--color-gold);
+}
+
+.contact-photo {
+  aspect-ratio: 8 / 5;
+  display: block;
+}
+
+.booking-panel {
+  background: #10221b;
+}
+
+.contact-page .form-control,
+.contact-page .form-select {
+  background-color: var(--background-dark);
+  border-color: rgb(255 255 255 / 15%);
+  color: var(--color-text);
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+.contact-page .form-control::placeholder {
+  color: var(--color-muted);
+  opacity: 0.75;
+}
+
+.contact-page .form-control:focus,
+.contact-page .form-select:focus {
+  border-color: var(--color-green);
+  box-shadow: 0 0 0 0.25rem rgb(85 189 149 / 20%);
+}
+
+.booking-submit {
+  --bs-btn-bg: var(--color-text);
+  --bs-btn-border-color: var(--color-text);
+  --bs-btn-color: var(--background-dark);
+  --bs-btn-hover-bg: var(--color-gold);
+  --bs-btn-hover-border-color: var(--color-gold);
+  --bs-btn-hover-color: var(--background-dark);
+}
+
+.booking-success-icon {
+  width: 90px;
+  height: 90px;
+  background: var(--color-green);
+  color: var(--background-dark);
+}
+
+/* Reserve space for the fixed navbar. */
+.contact-page {
+  padding-top: 88px;
+}
+
+/* Keep focused fields visible below the navbar. */
+.contact-page input,
+.contact-page select,
+.contact-page textarea,
+#booking-success-heading {
+  scroll-margin-top: 110px;
+}

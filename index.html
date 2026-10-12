@@ -31,52 +31,53 @@
 
 <body>
   <!-- Main section starting with overflow background -->
-  <main class="hero-section position-relative overflow-hidden text-white d-flex flex-column">
 
-    <!-- Header and navbar with bootrstrap classes for responsiveness and layout -->
-    <header class="position-relative">
-      <nav class="navbar navbar-expand-lg hero-nav py-3 bg-grey" data-bs-theme="dark" aria-label="Main navigation">
-        <div class="container-fluid p-0 gap-2">
-          <a class="navbar-brand d-flex align-items-center gap-2 gap-md-3 m-0" href="index.html">
-            <img class="brand__mark" src="images/logo.png" alt="" width="48" height="48">
-            <span class="brand-name fw-bold">Emerald <em class="fw-normal">Escapes</em></span>
+
+  <!-- Header and navbar with bootrstrap classes for responsiveness and layout -->
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg hero-nav py-3 bg-grey" data-bs-theme="dark" aria-label="Main navigation">
+      <div class="container-fluid p-0 gap-2">
+        <a class="navbar-brand d-flex align-items-center gap-2 gap-md-3 m-0" href="index.html">
+          <img class="brand__mark" src="images/logo.png" alt="" width="48" height="48">
+          <span class="brand-name fw-bold">Emerald <em class="fw-normal">Escapes</em></span>
+        </a>
+
+        <!-- Favourite and Theme buttons -->
+        <div class="d-flex align-items-center gap-2 ms-auto order-lg-3">
+          <a class="nav-control fav-pill btn rounded-pill d-flex align-items-center gap-2 px-3" href="experiences.html"
+            aria-label="View experiences and favourites">
+            <i class="fa-solid fa-heart text-danger" aria-hidden="true"></i>
+            <span class="fav-count">0</span>
           </a>
+          <button class="nav-control theme-toggle btn rounded-circle" type="button" aria-label="Switch colour theme">
+            <i class="fa-solid fa-sun" aria-hidden="true"></i>
+          </button>
 
-          <!-- Favourite and Theme buttons -->
-          <div class="d-flex align-items-center gap-2 ms-auto order-lg-3">
-            <a class="nav-control fav-pill btn rounded-pill d-flex align-items-center gap-2 px-3"
-              href="experiences.html" aria-label="View experiences and favourites">
-              <i class="fa-solid fa-heart text-danger" aria-hidden="true"></i>
-              <span class="fav-count">0</span>
-            </a>
-            <button class="nav-control theme-toggle btn rounded-circle" type="button" aria-label="Switch colour theme">
-              <i class="fa-solid fa-sun" aria-hidden="true"></i>
-            </button>
-
-            <!-- Collapsable menu for mobile -->
-            <button class="nav-control navbar-toggler rounded-circle p-0" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-              aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          </div>
-
-          <div class="collapse navbar-collapse order-lg-2" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto text-center gap-lg-3 pt-3 pt-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="experiences.html">Experiences</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact &amp; Booking</a>
-              </li>
-            </ul>
-          </div>
+          <!-- Collapsable menu for mobile -->
+          <button class="nav-control navbar-toggler rounded-circle p-0" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
         </div>
-      </nav>
-    </header>
+
+        <div class="collapse navbar-collapse order-lg-2" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto text-center gap-lg-3 pt-3 pt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="experiences.html">Experiences</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact &amp; Booking</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="hero-section position-relative overflow-hidden text-white d-flex flex-column">
 
     <!-- Hero section content -->
     <section class="hero-content mt-auto" aria-labelledby="hero-heading">
@@ -561,7 +562,8 @@
       <div class="border-top border-light border-opacity-10 pt-4
       d-flex flex-column flex-lg-row justify-content-between gap-2 small">
         <p class="mb-0">
-          © 2026 Emerald Escapes. A fictional company developed by <strong><a href="https://github.com/Cesargarciajr" target="_blank">Cesar Garcia</a></strong> for educational purpose
+          © 2026 Emerald Escapes. A fictional company developed by <strong><a href="https://github.com/Cesargarciajr"
+              target="_blank">Cesar Garcia</a></strong> for educational purpose
         </p>
 
         <p class="mb-0">
@@ -570,10 +572,16 @@
       </div>
     </div>
   </footer>
+  <button id="back-to-top" class="back-to-top" type="button" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
   <!-- Bootstrap cdn script -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/featured-carousel.js"></script>
   <script src="js/stats-counter.js"></script>
+
+  <!-- Scroll Navigation -->
+  <script src="js/scroll-navigation.js"></script>
 </body>
 
 </html>
