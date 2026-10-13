@@ -20,6 +20,7 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/theme-init.js"></script>
 </head>
 
 <body class="experiences-page">
@@ -227,10 +228,9 @@
 
                 <p class="experiences-intro fs-5 mb-4" id="empty-message"></p>
 
-                <button class="btn btn-light rounded-pill px-4 py-3 fw-semibold" id="browse-all-experiences"
-                    type="button">
+                <a class="btn btn-light rounded-pill px-4 py-3 fw-semibold" id="browse-all-experiences" type="button" href="experiences.html">
                     Browse all experiences
-                </button>
+                </a>
             </div>
 
             <noscript>
@@ -240,8 +240,7 @@
     </main>
 
     <!-- Details modal -->
-    <div class="modal fade" id="experience-modal" tabindex="-1" aria-labelledby="trip-title" aria-hidden="true"
-        data-bs-theme="dark">
+    <div class="modal fade" id="experience-modal" tabindex="-1" aria-labelledby="trip-title" aria-hidden="true">
 
         <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content trip-modal-content rounded-5 overflow-hidden">
@@ -324,8 +323,7 @@
     </div>
 
     <!-- Comparison modal -->
-    <div class="modal fade" id="compare-modal" tabindex="-1" aria-labelledby="compare-title" aria-hidden="true"
-        data-bs-theme="dark">
+    <div class="modal fade" id="compare-modal" tabindex="-1" aria-labelledby="compare-title" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content trip-modal-content rounded-4">
 
@@ -425,6 +423,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/experiences.js"></script>
     <script src="js/scroll-navigation.js"></script>
+    <script src="js/theme-toggle.js"></script>
 </body>
 
 </html>

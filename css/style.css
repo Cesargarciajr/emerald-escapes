@@ -1,4 +1,29 @@
-/* Shared values */
+/*
+  Emerald Escapes — shared stylesheet
+
+  Bootstrap handles the grid, spacing utilities, forms and modals.
+  This file adds the site's colors, typography and visual effects.
+
+  Sections:
+  1. Shared variables and typography
+  2. Navigation
+  3. Homepage
+  4. Footer and back-to-top button
+  5. Contact page
+  6. Experiences page
+  7. Light theme
+  8. Responsive layouts
+  9. Reduced motion
+
+  Dark mode is the default.
+  Theme scripts change data-bs-theme on <html>.
+*/
+
+/* ==========================================================
+   1. SHARED VARIABLES AND TYPOGRAPHY
+   ========================================================== */
+
+/* Reusable values keep colors and spacing consistent. */
 :root {
   --font-body: "DM Sans", sans-serif;
   --font-heading: "Cormorant Garamond", serif;
@@ -21,7 +46,7 @@ body {
   font-family: var(--font-body);
 }
 
-/* Shared typography */
+/* Use the display font for branding, headings and large numbers. */
 .brand-name,
 .hero-title,
 .story-heading,
@@ -31,7 +56,13 @@ body {
 .experience-caption h3,
 .stats-number,
 .cta-heading,
-.footer-brand {
+.footer-brand,
+.contact-title,
+.contact-panel-title,
+.experiences-page-title,
+.trip-card-title,
+.trip-modal-title,
+.trip-price {
   font-family: var(--font-heading);
 }
 
@@ -42,7 +73,13 @@ body {
 .experiences-heading,
 .experience-caption h3,
 .stats-number,
-.cta-heading {
+.cta-heading,
+.contact-title,
+.contact-panel-title,
+.experiences-page-title,
+.trip-card-title,
+.trip-modal-title,
+.trip-price {
   font-weight: 400;
 }
 
@@ -52,19 +89,24 @@ body {
   letter-spacing: -0.045em;
 }
 
+/* Small uppercase labels identify sections and categories. */
 .hero-eyebrow,
 .story-eyebrow,
 .experiences-eyebrow,
 .experience-count,
 .hero-bottom,
-.footer-heading {
+.footer-heading,
+.contact-eyebrow,
+.contact-detail-label {
   text-transform: uppercase;
 }
 
 .hero-eyebrow,
 .experiences-eyebrow,
 .experience-count,
-.footer-heading {
+.footer-heading,
+.contact-eyebrow,
+.contact-detail-label {
   letter-spacing: 0.18em;
 }
 
@@ -73,30 +115,37 @@ body {
   letter-spacing: 0.2em;
 }
 
+/* Gold and green provide the site's accent colors. */
 .hero-eyebrow > span,
 .hero-title em,
 .story-number,
 .experience-count,
 .cta-heading em,
-.footer-heading {
+.footer-heading,
+.contact-detail-label {
   color: var(--color-gold);
 }
 
 .story-heading em,
 .experiences-eyebrow,
-.experiences-heading em {
+.experiences-heading em,
+.contact-eyebrow,
+.contact-title em,
+.experiences-page-title em,
+.trip-location {
   color: var(--color-green);
 }
 
+/* Muted paragraphs use a relaxed line height. */
 .story-copy,
 .story-audiences p,
 .story-figure figcaption,
-.experiences-intro {
+.experiences-intro,
+.contact-muted {
   color: var(--color-muted);
   line-height: 1.7;
 }
 
-/* Shared section layout */
 .hero-nav,
 .hero-content,
 .hero-bottom {
@@ -121,26 +170,36 @@ body {
   background: var(--background-dark);
 }
 
-/* Shared gold buttons */
+/* Override Bootstrap button variables instead of rebuilding buttons. */
 .hero-actions .btn-warning,
 .final-cta .btn-warning {
   --bs-btn-bg: var(--color-gold);
   --bs-btn-border-color: var(--color-gold);
   --bs-btn-color: #082319;
-}
-
-.final-cta .btn-warning {
   --bs-btn-hover-bg: var(--color-gold-hover);
   --bs-btn-hover-border-color: var(--color-gold-hover);
   --bs-btn-hover-color: #082319;
 }
 
-/* Hero and navigation */
-.hero-section {
-  min-height: 100vh;
-  background:
-    linear-gradient(180deg, rgb(0 0 0 / 25%), rgb(0 20 13 / 75%)),
-    url("../images/hero.jpg") center / cover;
+/* ==========================================================
+   2. FIXED NAVIGATION
+   ========================================================== */
+
+/* Keep the navbar above the page but below Bootstrap modals. */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1030;
+}
+
+/* Translucent background keeps navigation readable while scrolling. */
+.site-header .hero-nav {
+  background: rgb(7 26 19 / 92%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgb(255 255 255 / 10%);
 }
 
 .brand-name {
@@ -158,6 +217,31 @@ body {
 .nav-control:focus-visible {
   color: #fff;
   background: rgb(255 255 255 / 15%);
+}
+
+.nav-control:focus-visible {
+  outline: 2px solid var(--color-green);
+  outline-offset: 3px;
+}
+
+/* ==========================================================
+   3. HOMEPAGE
+   ========================================================== */
+
+/* Cover the hero with the photo and darken it behind the text. */
+.hero-section {
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, rgb(0 0 0 / 25%), rgb(0 20 13 / 75%)),
+    url("../images/hero.jpg") center / cover;
+}
+
+/* Photo sections keep light text in both themes. */
+.hero-section,
+.experience-card {
+  --color-text: #f5f2e8;
+  --color-muted: #d0d8d2;
+  color: #f5f2e8;
 }
 
 .hero-content {
@@ -184,7 +268,6 @@ body {
   padding: 1rem;
   font-size: clamp(0.75rem, 2.8vw, 1rem);
   white-space: nowrap;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .hero-actions .btn-warning {
@@ -196,8 +279,14 @@ body {
   --bs-btn-border-color: rgb(255 255 255 / 45%);
 }
 
-.hero-actions
-.cta-btn .btn:hover {
+/* Lift buttons without moving surrounding content. */
+.hero-actions .btn,
+.final-cta .btn {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-actions .btn:hover,
+.final-cta .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgb(0 0 0 / 20%);
 }
@@ -252,6 +341,7 @@ body {
   line-height: 1;
 }
 
+/* Rounded top corners create the arched photo shape. */
 .story-image {
   aspect-ratio: 3 / 4;
   object-fit: cover;
@@ -267,7 +357,18 @@ body {
   animation: badge-spin 20s linear infinite;
 }
 
-/* Experiences */
+/* A positive rotation spins the badge clockwise. */
+@keyframes badge-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Homepage experience categories */
 .experiences-section {
   background: #11291f;
 }
@@ -285,6 +386,7 @@ body {
   font-weight: 600;
 }
 
+/* Isolate the image and gradient behind the card caption. */
 .experience-card {
   position: relative;
   display: flex;
@@ -293,7 +395,6 @@ body {
   overflow: hidden;
   isolation: isolate;
   border-radius: 1rem;
-  color: var(--color-text);
   text-decoration: none;
 }
 
@@ -361,6 +462,8 @@ body {
   background: var(--background-featured);
 }
 
+/* Hide the scrollbar while preserving horizontal scrolling.
+   Scroll snapping aligns the cards after swiping or using arrows. */
 .featured-track {
   scroll-snap-type: x mandatory;
   scroll-padding-inline: 1rem;
@@ -387,6 +490,7 @@ body {
   background: rgb(255 255 255 / 20%);
 }
 
+/* JavaScript updates this width as the carousel scrolls. */
 #featured-progress {
   width: 0%;
 }
@@ -423,7 +527,10 @@ body {
   --bs-btn-border-color: rgb(255 255 255 / 40%);
 }
 
-/* Footer */
+/* ==========================================================
+   4. FOOTER AND BACK-TO-TOP BUTTON
+   ========================================================== */
+
 .site-footer {
   background: #06120d;
   color: var(--color-muted);
@@ -454,199 +561,36 @@ body {
   color: var(--color-gold);
 }
 
-/* Animation */
-@keyframes badge-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Desktop */
-@media (min-width: 992px) {
-  :root {
-    --section-gutter: 7%;
-  }
-
-  .hero-content {
-    padding-top: clamp(6rem, 15svh, 10rem);
-  }
-
-  .hero-title {
-    font-size: clamp(5rem, 10vw, 10.5rem);
-  }
-
-  .hero-actions .btn {
-    flex: initial;
-    padding: 1rem 2rem;
-  }
-
-  .hero-actions .btn-warning {
-    --bs-btn-hover-bg: var(--color-gold-hover);
-    --bs-btn-hover-border-color: var(--color-gold-hover);
-    --bs-btn-hover-color: #082319;
-  }
-
-  .hero-actions .btn-outline-light {
-    --bs-btn-hover-bg: #f5f2e837;
-    --bs-btn-hover-border-color: var(--color-text);
-    --bs-btn-hover-color: white;
-  }
-
-  .scroll-indicator {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .navbar .nav-link.active::after {
-    content: "";
-    display: block;
-    width: 5px;
-    height: 5px;
-    margin: 4px auto 0;
-    border-radius: 50%;
-    background: var(--color-gold);
-  }
-
-  .experience-card-large {
-    min-height: 28rem;
-    height: 100%;
-  }
-
-  .experience-card-large h3 {
-    font-size: clamp(2.5rem, 3.5vw, 4rem);
-  }
-}
-
-/* Mobile and tablet */
-@media (max-width: 991.98px) {
-  .story-figure {
-    max-width: 480px;
-    margin-inline: auto;
-  }
-
-  .experience-card {
-    min-height: 18rem;
-  }
-}
-
-/* Small phones */
-@media (max-width: 575.98px) {
-  .brand__mark {
-    width: 32px;
-    height: 32px;
-  }
-
-  .nav-control {
-    min-width: 36px;
-    height: 36px;
-  }
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .story-badge {
-    animation: none;
-  }
-
-  .hero-actions .btn,
-  .story-audiences li,
-  .experience-card img {
-    transition: none;
-  }
-
-  .hero-actions .btn:hover,
-  .story-audiences li:hover,
-  .experience-card:hover img {
-    transform: none;
-  }
-}
-
-.final-cta .btn {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.final-cta .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgb(0 0 0 / 20%);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .final-cta .btn {
-    transition: none;
-  }
-
-  .final-cta .btn:hover {
-    transform: none;
-  }
-}
-
-/* ===================================
-   Fixed Navigation Bar
-=================================== */
-
-.site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1030;
-}
-
-.site-header .hero-nav {
-  background: rgb(7 26 19 / 92%);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgb(255 255 255 / 10%);
-}
-
-
-/* ===================================
-   Back to Top Button
-=================================== */
-
+/* Hidden until scroll-navigation.js adds .is-visible.
+   Keep its stacking order below the navbar and Bootstrap modals. */
 .back-to-top {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
   z-index: 1020;
-
   width: 50px;
   height: 50px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   background: var(--color-gold);
-  color: var(--background-dark);
-
+  color: #082319;
   border: none;
   border-radius: 50%;
-
   font-size: 1.2rem;
   cursor: pointer;
-
-  /* Hidden by default */
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   transform: translateY(15px);
-
+  box-shadow: 0 4px 15px rgb(0 0 0 / 25%);
   transition:
     opacity 0.3s ease,
     visibility 0.3s ease,
     transform 0.3s ease,
     background 0.3s ease;
-
-  box-shadow: 0 4px 15px rgb(0 0 0 / 25%);
 }
 
-/* Show the button when scrolling */
 .back-to-top.is-visible {
   opacity: 1;
   visibility: visible;
@@ -654,95 +598,37 @@ body {
   transform: translateY(0);
 }
 
-/* Hover effect */
-.back-to-top:hover {
+.back-to-top.is-visible:hover {
   background: var(--color-gold-hover);
   transform: translateY(-4px);
 }
 
-/* Keyboard accessibility */
 .back-to-top:focus-visible {
   outline: 3px solid var(--color-text);
   outline-offset: 4px;
 }
 
-/* Mobile responsiveness */
-@media (max-width: 575.98px) {
-  .back-to-top {
-    bottom: 1.5rem;
-    right: 1.5rem;
-    width: 45px;
-    height: 45px;
-  }
-}
+/* ==========================================================
+   5. CONTACT AND BOOKING PAGE
+   ========================================================== */
 
-/* Accessibility: reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .back-to-top {
-    transition: none;
-  }
-}
-
-/* Back to Top - Mobile */
-@media (max-width: 767.98px) {
-  .back-to-top {
-    position: fixed;
-    bottom: 25px;
-    right: 20px;
-
-    width: 45px;
-    height: 45px;
-
-    z-index: 9999;
-  }
-
-  .back-to-top.is-visible {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transform: translateY(0);
-  }
-}
-
-.back-to-top {
-  opacity: 1 !important;
-  visibility: visible !important;
-  display: flex !important;
-  z-index: 9999 !important;
-  transform: none !important;
-}
-
-/*
-  Contact & Booking page style
-*/
-
-.contact-page {
+/* Reserve room for the fixed navbar on interior pages.
+   experiences.js supplies the measured height on its page. */
+.contact-page,
+.experiences-page {
+  padding-top: var(--navbar-height, 88px);
   background: var(--background-dark);
   color: var(--color-text);
 }
 
-/* Keep this page's header in the normal document flow. */
-
-.contact-main {
+.contact-main,
+.experiences-introduction {
   padding: var(--section-spacing) var(--section-gutter);
 }
 
 .contact-eyebrow,
 .contact-detail-label {
   font-size: 0.8rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-.contact-eyebrow,
-.contact-title em {
-  color: var(--color-green);
-}
-
-.contact-title,
-.contact-panel-title {
-  font-family: var(--font-heading);
-  font-weight: 400;
 }
 
 .contact-title {
@@ -756,17 +642,8 @@ body {
   line-height: 1.1;
 }
 
-.contact-muted {
-  color: var(--color-muted);
-  line-height: 1.7;
-}
-
 .contact-details {
   background: #102d23;
-}
-
-.contact-detail-label {
-  color: var(--color-gold);
 }
 
 .contact-details a {
@@ -813,7 +690,9 @@ body {
   --bs-btn-color: var(--background-dark);
   --bs-btn-hover-bg: var(--color-gold);
   --bs-btn-hover-border-color: var(--color-gold);
-  --bs-btn-hover-color: var(--background-dark);
+
+  /* Dark text remains readable on gold in both themes. */
+  --bs-btn-hover-color: #082319;
 }
 
 .booking-success-icon {
@@ -823,46 +702,40 @@ body {
   color: var(--background-dark);
 }
 
-/* Reserve space for the fixed navbar. */
-.contact-page {
-  padding-top: 88px;
-}
-
-/* Keep focused fields visible below the navbar. */
+/* Leave space above focused fields and enquiry anchor targets. */
 .contact-page input,
 .contact-page select,
 .contact-page textarea,
-#booking-success-heading {
+#booking-success-heading,
+#booking-content {
   scroll-margin-top: 110px;
 }
 
-/* Experiences page */
-.experiences-page {
-  padding-top: 88px;
-  background: var(--background-dark);
-  color: var(--color-text);
-}
-
-.experiences-introduction {
-  padding: var(--section-spacing) var(--section-gutter);
-}
+/* ==========================================================
+   6. EXPERIENCES PAGE
+   ========================================================== */
 
 .experiences-page-title {
-  font-family: var(--font-heading);
   font-size: clamp(3rem, 7vw, 7rem);
-  font-weight: 400;
   line-height: 0.98;
   letter-spacing: -0.045em;
 }
 
-.experiences-page-title em {
-  color: var(--color-green);
-}
-
+/* Stick below the navbar when the introduction scrolls away.
+   JavaScript measures the navbar, including its mobile menu. */
 .experience-filters {
+  position: sticky;
+  top: var(--navbar-height, 88px);
+  z-index: 1020;
   padding-inline: var(--section-gutter);
+  background: var(--background-dark);
 }
 
+#experience-filters {
+  scroll-margin-top: var(--navbar-height, 88px);
+}
+
+/* Category pills can scroll horizontally on small screens. */
 .category-options {
   width: fit-content;
   max-width: 100%;
@@ -905,21 +778,7 @@ body {
   padding: 2rem var(--section-gutter) var(--section-spacing);
 }
 
-.experiences-page {
-  padding-top: var(--navbar-height, 88px);
-}
-
-.experience-filters {
-  position: sticky;
-  top: var(--navbar-height, 88px);
-  z-index: 1020;
-  background: var(--background-dark);
-}
-
-#experience-filters {
-  scroll-margin-top: var(--navbar-height, 88px);
-}
-
+/* Catalog cards and their reusable details modal. */
 .trip-card,
 .trip-modal-content {
   background: #10221b;
@@ -929,13 +788,7 @@ body {
 .trip-card-image {
   aspect-ratio: 4 / 3;
   object-fit: cover;
-}
-
-.trip-card-title,
-.trip-modal-title,
-.trip-price {
-  font-family: var(--font-heading);
-  font-weight: 400;
+  transition: transform 0.4s ease;
 }
 
 .trip-card-title {
@@ -946,10 +799,6 @@ body {
 .trip-modal-title {
   font-size: clamp(2rem, 3.5vw, 3.5rem);
   line-height: 1;
-}
-
-.trip-location {
-  color: var(--color-green);
 }
 
 .trip-save-button {
@@ -965,21 +814,7 @@ body {
   background: #173126;
 }
 
-@media (min-width: 992px) {
-  .trip-modal-image {
-    height: 100%;
-    min-height: 600px;
-  }
-}
-
-#booking-content {
-  scroll-margin-top: 110px;
-}
-
-.trip-card-image {
-  transition: transform 0.4s ease;
-}
-
+/* The hint is decorative; the existing details button handles clicks. */
 .trip-quick-view {
   background: var(--color-text);
   color: var(--background-dark);
@@ -989,6 +824,13 @@ body {
   transition: opacity 0.2s ease;
 }
 
+/* Keyboard users receive the same quick-view hint. */
+.trip-card:focus-within .trip-quick-view {
+  opacity: 1;
+}
+
+/* Restrict image hover effects to devices with a precise pointer.
+   The overflow-hidden image wrapper clips the enlarged image. */
 @media (hover: hover) and (pointer: fine) {
   .trip-card:hover .trip-card-image {
     transform: scale(1.04);
@@ -999,18 +841,296 @@ body {
   }
 }
 
-/* Show the hint when navigating with the keyboard too. */
-.trip-card:focus-within .trip-quick-view {
+/* ==========================================================
+   7. LIGHT THEME
+   ========================================================== */
+
+/* Override shared values instead of repeating every component style. */
+:root[data-bs-theme="light"] {
+  --color-text: #172c23;
+  --color-muted: #53675d;
+  --color-green: #247454;
+  --background-dark: #f6f4ed;
+  --background-featured: #e7eee8;
+}
+
+[data-bs-theme="light"] body {
+  background: var(--background-dark);
+  color: var(--color-text);
+}
+
+/* Light surfaces for panels that use fixed dark colors by default. */
+[data-bs-theme="light"] :is(
+  .experiences-section,
+  .contact-details,
+  .category-options,
+  .trip-estimate
+) {
+  background: #e4ece5;
+}
+
+[data-bs-theme="light"] :is(
+  .booking-panel,
+  .trip-card,
+  .trip-modal-content
+) {
+  background: #fffdf7;
+}
+
+[data-bs-theme="light"] .site-footer {
+  background: #e8ece4;
+}
+
+[data-bs-theme="light"] .site-header .hero-nav {
+  background: rgb(246 244 237 / 95%);
+  border-bottom-color: rgb(23 44 35 / 15%);
+}
+
+/* Bootstrap's navbar variables control normal, active and hover text. */
+[data-bs-theme="light"] .site-header .navbar {
+  --bs-navbar-color: #53675d;
+  --bs-navbar-hover-color: #247454;
+  --bs-navbar-active-color: #172c23;
+  --bs-navbar-brand-color: #172c23;
+  --bs-navbar-brand-hover-color: #247454;
+}
+
+[data-bs-theme="light"] .nav-control {
+  color: var(--color-text);
+  border-color: #63766b;
+}
+
+[data-bs-theme="light"] .nav-control:hover,
+[data-bs-theme="light"] .nav-control:focus-visible {
+  color: var(--color-text);
+  background: rgb(23 44 35 / 8%);
+}
+
+/* Darker gold provides contrast on pale backgrounds. */
+[data-bs-theme="light"] :is(
+  .story-number,
+  .experience-count,
+  .contact-detail-label,
+  .footer-heading,
+  .cta-heading em
+) {
+  color: #896014;
+}
+
+/* Photo cards retain the original brighter gold. */
+[data-bs-theme="light"] .experience-card .experience-count {
+  color: #e4b65b;
+}
+
+/* Bootstrap text utilities use !important, requiring a matching override. */
+[data-bs-theme="light"] .featured-section .experiences-heading .text-warning {
+  color: #896014 !important;
+}
+
+[data-bs-theme="light"] #experiences-grid .text-light {
+  color: var(--color-text) !important;
+}
+
+/* Adapt outline buttons on light surfaces while preserving photo buttons. */
+[data-bs-theme="light"] :is(
+  .filter-button,
+  .trip-modal-content .btn-outline-light,
+  .final-cta .btn-outline-light,
+  #featured-prev,
+  #featured-next
+) {
+  --bs-btn-color: #172c23;
+  --bs-btn-border-color: #63766b;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #172c23;
+  --bs-btn-hover-border-color: #172c23;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #172c23;
+  --bs-btn-active-border-color: #172c23;
+  --bs-btn-disabled-color: #53675d;
+  --bs-btn-disabled-border-color: rgb(23 44 35 / 25%);
+}
+
+/* Light fields and clearer input boundaries. */
+[data-bs-theme="light"] .contact-page .form-control,
+[data-bs-theme="light"] .contact-page .form-select,
+[data-bs-theme="light"] .experience-filters .form-select {
+  background-color: #fffdf7;
+  color: var(--color-text);
+  border-color: #63766b;
+}
+
+[data-bs-theme="light"] .trip-estimate .form-control {
+  border-color: #63766b;
+}
+
+[data-bs-theme="light"] .contact-page .form-control::placeholder {
+  color: #53675d;
   opacity: 1;
 }
 
+/* Keep valid focused fields green after the light border overrides.
+   Invalid fields retain their red border. */
+[data-bs-theme="light"] .contact-page
+:is(.form-control, .form-select):focus:not(.is-invalid) {
+  border-color: var(--color-green);
+}
+
+/* Required markers, favourite hearts and validation feedback. */
+[data-bs-theme="light"] .text-danger {
+  color: #b42334 !important;
+}
+
+[data-bs-theme="light"] .contact-page
+:is(.form-control.is-invalid, .form-select.is-invalid) {
+  border-color: #b42334;
+}
+
+[data-bs-theme="light"] .contact-page .invalid-feedback {
+  color: #b42334;
+}
+
+/* Override Bootstrap's white border utilities on light surfaces. */
+[data-bs-theme="light"] :is(
+  .experience-filters,
+  .booking-panel,
+  .trip-card,
+  .trip-card .border-light,
+  .trip-modal-content .border-light,
+  .contact-details .border-light,
+  .site-footer .border-light
+) {
+  border-color: rgb(23 44 35 / 15%) !important;
+}
+
+[data-bs-theme="light"] .story-audiences li {
+  border-color: rgb(23 44 35 / 15%);
+}
+
+/* ==========================================================
+   8. RESPONSIVE LAYOUTS
+   ========================================================== */
+
+/* Desktop: match Bootstrap's lg breakpoint. */
+@media (min-width: 992px) {
+  :root {
+    --section-gutter: 7%;
+  }
+
+  .hero-content {
+    padding-top: clamp(6rem, 15svh, 10rem);
+  }
+
+  .hero-title {
+    font-size: clamp(5rem, 10vw, 10.5rem);
+  }
+
+  .hero-actions .btn {
+    flex: initial;
+    padding: 1rem 2rem;
+  }
+
+  .hero-actions .btn-outline-light {
+    --bs-btn-hover-bg: #f5f2e837;
+    --bs-btn-hover-border-color: var(--color-text);
+    --bs-btn-hover-color: white;
+  }
+
+  /* Center the scroll indicator across the full hero. */
+  .scroll-indicator {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Mark the current navigation link with a gold dot. */
+  .navbar .nav-link.active::after {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 5px;
+    margin: 4px auto 0;
+    border-radius: 50%;
+    background: var(--color-gold);
+  }
+
+  .experience-card-large {
+    min-height: 28rem;
+    height: 100%;
+  }
+
+  .experience-card-large h3 {
+    font-size: clamp(2.5rem, 3.5vw, 4rem);
+  }
+
+  .trip-modal-image {
+    height: 100%;
+    min-height: 600px;
+  }
+}
+
+/* Tablet and mobile: preserve the current shorter photo-card layout. */
+@media (max-width: 991.98px) {
+  .story-figure {
+    max-width: 480px;
+    margin-inline: auto;
+  }
+
+  .experience-card {
+    min-height: 18rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .back-to-top {
+    bottom: 25px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/* Compact branding and controls on small phones. */
+@media (max-width: 575.98px) {
+  .brand__mark {
+    width: 32px;
+    height: 32px;
+  }
+
+  .nav-control {
+    min-width: 36px;
+    height: 36px;
+  }
+}
+
+/* ==========================================================
+   9. REDUCED MOTION
+   ========================================================== */
+
+/* Respect visitors who prefer less animation.
+   Keep this block last so it overrides earlier motion effects. */
 @media (prefers-reduced-motion: reduce) {
+  .story-badge {
+    animation: none;
+  }
+
+  .hero-actions .btn,
+  .final-cta .btn,
+  .story-audiences li,
+  .experience-card img,
   .trip-card-image,
-  .trip-quick-view {
+  .trip-quick-view,
+  .back-to-top {
     transition: none;
   }
 
-  .trip-card:hover .trip-card-image {
+  .hero-actions .btn:hover,
+  .final-cta .btn:hover,
+  .story-audiences li:hover,
+  .experience-card:hover img,
+  .trip-card:hover .trip-card-image,
+  .back-to-top.is-visible,
+  .back-to-top.is-visible:hover {
     transform: none;
   }
 }
