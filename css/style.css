@@ -1134,3 +1134,50 @@ body {
     transform: none;
   }
 }
+
+/* Change the arrow color while keeping it stationary. */
+.experience-arrow {
+  color: #f5f2e8;
+  pointer-events: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* A gold section makes the circular ring's rotation visible. */
+.experience-arrow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgb(255 255 255 / 35%);
+  border-top-color: var(--color-gold);
+  border-radius: 50%;
+  transition: transform 0.45s ease;
+}
+
+.experience-card:hover .experience-arrow,
+.experience-card:focus-visible .experience-arrow {
+  color: var(--color-gold);
+  background: rgb(228 182 91 / 15%);
+}
+
+.experience-card:hover .experience-arrow::before,
+.experience-card:focus-visible .experience-arrow::before {
+  transform: rotate(135deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-arrow,
+  .experience-arrow::before {
+    transition: none;
+  }
+
+  .experience-card:hover .experience-arrow::before,
+  .experience-card:focus-visible .experience-arrow::before {
+    transform: none;
+  }
+} 
+
+.experience-card:hover .experience-arrow,
+.experience-card:focus-visible .experience-arrow {
+  background-color: var(--color-gold);
+  color: #082319;
+}

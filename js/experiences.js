@@ -551,27 +551,65 @@
   }
 
   // Start with all 17 trips, even if the browser restores old form values.
+  // Read homepage category links, carousel links and saved-trip links.
+  const parameters = new URLSearchParams(window.location.search);
+  const requestedCategory = parameters.get("category");
+  const requestedTrip = trips.find(
+    (trip) => trip.id === parameters.get("trip")
+  );
+
   filters.reset();
+
+  // Apply only recognised categories.
+  if (
+    requestedCategory &&
+    Object.prototype.hasOwnProperty.call(categoryNames, requestedCategory)
+  ) {
+    document.getElementById(`category-${requestedCategory}`).checked = true;
+  }
+
+  savedFilter.checked = parameters.get("saved") === "true";
+
+  // A direct trip link must leave its card visible behind the modal.
+  if (requestedTrip) {
+    document.getElementById(`category-${requestedTrip.category}`).checked = true;
+    priceFilter.value = "all";
+    savedFilter.checked = false;
+  }
+
   updateFavouriteCount();
   renderTrips();
 
-  // Initialize modals after the cards have rendered.
+  // Initialize Bootstrap modals.
   if (window.bootstrap?.Modal) {
     detailsModal = bootstrap.Modal.getOrCreateInstance(modalElement);
     comparisonModal = bootstrap.Modal.getOrCreateInstance(compareElement);
+
+    if (requestedTrip) {
+      // Wait for the existing reset handler's scheduled render to finish.
+      setTimeout(() => {
+        const trigger = grid.querySelector(
+          `[data-details="${requestedTrip.id}"]`
+        );
+
+        openDetails(requestedTrip.id, trigger);
+      }, 0);
+    }
   } else {
     console.error("Bootstrap did not load. Cards work, but modals require it.");
   }
 
+  // Return from an empty saved/filtered view to all experiences.
   document.getElementById("browse-all-experiences")
-  .addEventListener("click", () => {
-    filters.reset();
+    .addEventListener("click", () => {
+      filters.reset();
 
-    const url = new URL(window.location.href);
-    url.searchParams.delete("saved");
-    history.replaceState(null, "", url.href);
+      const url = new URL(window.location.href);
+      url.searchParams.delete("saved");
+      url.searchParams.delete("category");
+      url.searchParams.delete("trip");
 
-    document.getElementById("category-all").focus();
-  });
-  
+      history.replaceState(null, "", url.href);
+      document.getElementById("category-all").focus();
+    });
 })();

@@ -27,7 +27,7 @@
 
     <!-- Fixed navbar -->
     <header class="site-header">
-        <nav class="navbar navbar-expand-lg hero-nav py-3" data-bs-theme="dark" aria-label="Main navigation">
+        <nav class="navbar navbar-expand-lg hero-nav py-3" aria-label="Main navigation">
 
             <div class="container-fluid p-0 gap-2">
                 <a class="navbar-brand d-flex align-items-center gap-2 gap-md-3 m-0" href="index.html">
@@ -108,7 +108,7 @@
 
         <!-- Sticky filters -->
         <section class="experience-filters border-top border-bottom
-      border-light border-opacity-10 py-3" aria-labelledby="filters-heading" data-bs-theme="dark">
+      border-light border-opacity-10 py-3" aria-labelledby="filters-heading">
 
             <h2 class="visually-hidden" id="filters-heading">
                 Filter experiences
@@ -208,6 +208,8 @@
                         Reset filters
                     </button>
                 </div>
+
+                <p class="visually-hidden" id="trip-announcement" role="status"></p>
             </form>
         </section>
 
@@ -228,9 +230,10 @@
 
                 <p class="experiences-intro fs-5 mb-4" id="empty-message"></p>
 
-                <a class="btn btn-light rounded-pill px-4 py-3 fw-semibold" id="browse-all-experiences" type="button" href="experiences.html">
+                <button class="btn btn-light rounded-pill px-4 py-3 fw-semibold" id="browse-all-experiences"
+                    type="button">
                     Browse all experiences
-                </a>
+                </button>
             </div>
 
             <noscript>

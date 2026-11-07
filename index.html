@@ -35,7 +35,7 @@
 
   <!-- Header and navbar with bootrstrap classes for responsiveness and layout -->
   <header class="site-header">
-    <nav class="navbar navbar-expand-lg hero-nav py-3 bg-grey" data-bs-theme="dark" aria-label="Main navigation">
+    <nav class="navbar navbar-expand-lg hero-nav py-3 bg-grey" aria-label="Main navigation">
       <div class="container-fluid p-0 gap-2">
         <a class="navbar-brand d-flex align-items-center gap-2 gap-md-3 m-0" href="index.html">
           <img class="brand__mark" src="images/logo.png" alt="" width="48" height="48">
@@ -247,7 +247,7 @@
       <div class="row g-3">
         <!-- Large coastal card -->
         <div class="col-lg-8">
-          <a class="experience-card experience-card-large" href="experiences.html">
+          <a class="experience-card experience-card-large" href="experiences.html?category=coastal#experience-filters">
             <img src="images/moher.jpg" alt="" loading="lazy">
 
             <span class="experience-arrow" aria-hidden="true">↗</span>
@@ -263,7 +263,7 @@
         <!-- Two stacked cards -->
         <div class="col-lg-4">
           <div class="d-flex flex-column gap-3">
-            <a class="experience-card" href="experiences.html">
+            <a class="experience-card" href="experiences.html?category=city#experience-filters">
               <img src="images/dublin.jpg" alt="" loading="lazy">
 
               <span class="experience-arrow" aria-hidden="true">↗</span>
@@ -275,7 +275,7 @@
               </div>
             </a>
 
-            <a class="experience-card" href="experiences.html">
+            <a class="experience-card" href="experiences.html?category=countryside#experience-filters">
               <img src="images/connemara.jpg" alt="" loading="lazy">
 
               <span class="experience-arrow" aria-hidden="true">↗</span>
@@ -291,7 +291,7 @@
 
         <!-- Bottom row -->
         <div class="col-lg-6">
-          <a class="experience-card" href="experiences.html">
+          <a class="experience-card" href="experiences.html?category=family#experience-filters">
             <img src="images/loughkey.jpg" alt="" loading="lazy">
 
             <span class="experience-arrow" aria-hidden="true">↗</span>
@@ -305,7 +305,7 @@
         </div>
 
         <div class="col-lg-6">
-          <a class="experience-card" href="experiences.html">
+          <a class="experience-card" href="experiences.html?category=cultural#experience-filters">
             <img src="images/newgrange.jpg" alt="" loading="lazy">
 
             <span class="experience-arrow" aria-hidden="true">↗</span>
@@ -358,7 +358,7 @@
     <div class="featured-track d-flex gap-3 overflow-x-auto px-3 pb-3" id="featured-track" role="region"
       aria-label="Featured experiences" tabindex="0">
 
-      <a class="experience-card featured-card flex-shrink-0" href="experiences.html">
+      <a class="experience-card featured-card flex-shrink-0" href="experiences.html?trip=dublin">
         <img src="images/dublin.jpg" alt="" loading="lazy">
         <span class="position-absolute top-0 start-0 m-3 small">01 / 06</span>
         <span class="badge rounded-pill text-bg-warning position-absolute top-0 end-0 m-3">
@@ -371,7 +371,7 @@
         </div>
       </a>
 
-      <a class="experience-card featured-card flex-shrink-0" href="experiences.html">
+      <a class="experience-card featured-card flex-shrink-0" href="experiences.html?trip=moher">
         <img src="images/moher.jpg" alt="" loading="lazy">
         <span class="position-absolute top-0 start-0 m-3 small">02 / 06</span>
         <span class="badge rounded-pill text-bg-warning position-absolute top-0 end-0 m-3">
@@ -384,7 +384,7 @@
         </div>
       </a>
 
-      <a class="experience-card featured-card flex-shrink-0" href="experiences.html">
+      <a class="experience-card featured-card flex-shrink-0" href="experiences.html?trip=wild-atlantic">
         <img src="images/wildatlantic.jpg" alt="" loading="lazy">
         <span class="position-absolute top-0 start-0 m-3 small">03 / 06</span>
         <span class="badge rounded-pill text-bg-warning position-absolute top-0 end-0 m-3">
@@ -397,7 +397,7 @@
         </div>
       </a>
 
-      <a class="experience-card featured-card flex-shrink-0" href="experiences.html">
+      <a class="experience-card featured-card flex-shrink-0" href="experiences.html?trip=causeway">
         <img src="images/causeway.jpg" alt="" loading="lazy">
         <span class="position-absolute top-0 start-0 m-3 small">04 / 06</span>
         <span class="badge rounded-pill text-bg-warning position-absolute top-0 end-0 m-3">
@@ -410,7 +410,7 @@
         </div>
       </a>
 
-      <a class="experience-card featured-card flex-shrink-0" href="experiences.html">
+      <a class="experience-card featured-card flex-shrink-0" href="experiences.html?trip=connemara">
         <img src="images/connemara.jpg" alt="" loading="lazy">
         <span class="position-absolute top-0 start-0 m-3 small">05 / 06</span>
         <span class="badge rounded-pill text-bg-warning position-absolute top-0 end-0 m-3">
@@ -423,7 +423,7 @@
         </div>
       </a>
 
-      <a class="experience-card featured-card flex-shrink-0" href="experiences.html">
+      <a class="experience-card featured-card flex-shrink-0" href="experiences.html?trip=aran">
         <img src="images/aran.jpg" alt="" loading="lazy">
         <span class="position-absolute top-0 start-0 m-3 small">06 / 06</span>
         <span class="badge rounded-pill text-bg-warning position-absolute top-0 end-0 m-3">
@@ -583,6 +583,7 @@
   <!-- Scroll Navigation -->
   <script src="js/scroll-navigation.js"></script>
   <script src="js/theme-toggle.js"></script>
+  <script src="js/favourites-counter.js"></script>
 </body>
 
 </html>
